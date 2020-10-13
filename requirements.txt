@@ -1,2 +1,2 @@
-locust
-Faker
+locust=1.3.0
+Faker=4.9.0

@@ -9,4 +9,4 @@ RUN apk --no-cache add --virtual=.build-dep build-base \
 
 EXPOSE 5557 5558 8089
 
-ENTRYPOINT ["locust"] 
+ENTRYPOINT ["locust", "--locustfile", "./locust/locustfile.py"] 

@@ -75,7 +75,7 @@
                             "command": [
                                 "locust",
                                 "--locustfile",
-                                "./locust/locustfile.py",
+                                "/home/locust/locust/locustfile.py",
                                 "--master",
                                 "--expect-workers",
                                 "[parameters('numberOfInstances')]",
@@ -84,7 +84,7 @@
                             ],
                             "volumeMounts": [
                                 {
-                                    "mountPath": "/locust",
+                                    "mountPath": "/home/locust/locust",
                                     "name": "locust"
                                 }
                             ]
@@ -149,7 +149,7 @@
                             "command": [
                                 "locust",
                                 "--locustfile",
-                                "./locust/locustfile.py",
+                                "/home/locust/locust/locustfile.py",
                                 "--worker",
                                 "--master-host",
                                 "[reference(resourceId('Microsoft.ContainerInstance/containerGroups', variables('masterContainerGroupName'))).ipAddress.ip]",
@@ -158,7 +158,7 @@
                             ],
                             "volumeMounts": [
                                 {
-                                    "mountPath": "/locust",
+                                    "mountPath": "/home/locust/locust",
                                     "name": "locust"
                                 }
                             ]

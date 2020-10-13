@@ -45,7 +45,7 @@ az storage share create -n locust --connection-string $AZURE_STORAGE_CONNECTION_
 	-o json >> log.txt
 
 echo 'uploading simulator scripts' | tee -a log.txt
-az storage file upload-batch --destination locust --source locust/ --connection-string $AZURE_STORAGE_CONNECTION_STRING \
+az storage file upload-batch --destination locust --source locust --connection-string $AZURE_STORAGE_CONNECTION_STRING \
     -o json >> log.txt
 
 echo "deploying locust ($TEST_CLIENTS clients)..." | tee -a log.txt
@@ -67,7 +67,7 @@ echo "locust: starting ..." | tee -a log.txt
 declare USER_COUNT=$(($USERS_PER_CLIENT*$TEST_CLIENTS))
 declare SPAWN_RATE=$(($SPAWN_RATE*$TEST_CLIENTS))
 echo "locust: users: $USER_COUNT, spawn rate: $SPAWN_RATE"
-curl -fsL $LOCUST_MONITOR/swarm -X POST -F "locust_count=$USER_COUNT" -F "spawn_rate=$SPAWN_RATE" >> log.txt
+curl -fsL $LOCUST_MONITOR/swarm -X POST -F "user_count=$USER_COUNT" -F "spawn_rate=$SPAWN_RATE" >> log.txt
 
 echo "locust: monitor available at: $LOCUST_MONITOR" | tee -a log.txt
 

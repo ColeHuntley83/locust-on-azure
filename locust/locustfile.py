@@ -1,7 +1,7 @@
 from locust import HttpUser, TaskSet, task, between
 import random
 
-class APIUser(HttpLocust):
+class APIUser(HttpUser):
     wait_time = between(5, 10) # seconds
     
     @task(8)

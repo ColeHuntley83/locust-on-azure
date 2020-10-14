@@ -35,7 +35,7 @@
         }
     },
     "variables": {
-        "image": "locustio/locust:1.3.0",
+        "image": "colehuntley83/locustfakerio:firsttry",
         "cpuCores": "1",
         "masterMemoryInGb": "2",
         "clientMemoryInGb": "2",
@@ -61,7 +61,7 @@
                             "resources": {
                                 "requests": {
                                     "cpu": "[variables('cpuCores')]",
-                                    "memoryInGb": "[variables('masterMemoryInGb')]"
+                                    "memoryInGB": "[variables('masterMemoryInGb')]"
                                 }
                             },
                             "ports": [
@@ -135,7 +135,7 @@
                             "resources": {
                                 "requests": {
                                     "cpu": "[variables('cpuCores')]",
-                                    "memoryInGb": "[variables('clientMemoryInGb')]"
+                                    "memoryInGB": "[variables('clientMemoryInGb')]"
                                 }
                             },
                             "ports": [

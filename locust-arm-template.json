@@ -38,7 +38,7 @@
         "image": "colehuntley83/locustfakerio:firsttry",
         "cpuCores": "1",
         "masterMemoryInGb": "2",
-        "clientMemoryInGb": "2",
+        "clientMemoryInGb": "1",
         "masterContainerGroupName": "locust-master",
         "clientContainerGroupNamePrefix": "locust-",
         "containerName": "locust",

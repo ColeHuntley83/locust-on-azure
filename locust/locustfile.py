@@ -11,7 +11,7 @@ fake = Faker()
 def get_date():
     now = datetime.now()
 
-    dt_string = now.strftime("%d/%m/%Y %H:%M:%S")
+    dt_string = now.strftime("%m/%d/%Y %H:%M:%S")
 
     return dt_string
 
@@ -42,7 +42,10 @@ def mock_data():
             "sdate": get_date(),
             "activdate": get_date(),
             "linkdate": get_date(),
-            "devstatus": f"{fake.random_int(0, 2)}"
+            "devstatus": "1",
+            "ttype" : "White",
+            "tperson": "Parcel",
+            "apn": fake.first_name()
         }
     }
 
@@ -72,5 +75,11 @@ class APIUser(HttpUser):
     def post_event(self):
         headers = {'content-type': 'application/json'}
         self.client.post("/events", headers=headers, json=mock_event())
+
+
    
 
+# tape personility - parcel
+# tape type - white
+# date format - mm/dd/yy 
+# APN in the db
